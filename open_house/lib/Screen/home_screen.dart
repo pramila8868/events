@@ -21,57 +21,55 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  child: Stack(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.022.h),
-                        decoration: BoxDecoration(color: Colors.black),
-                        child: Column(
-                          children: [
-                            Screen(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Stack(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.022.h),
+                      decoration: BoxDecoration(color: Colors.black),
+                      child: Column(
+                        children: [
+                          Screen(
 
-                                // organizationDetail: organizationDetail
-                                ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Icon(
-                                Icons.arrow_back_ios,
-                                size: 25,
-                                color: btntext,
+                              // organizationDetail: organizationDetail
                               ),
-                              Icon(
-                                Icons.more_vert,
-                                size: 21,
-                                color: btntext,
-                              ),
-                            ]),
+                        ],
                       ),
-                      Positioned(
-                          top: 10.h,
-                          left: 160,
-                          child: CircleAvatar(
-                            radius: 26.sp,
-                          )),
-                    ],
-                  ),
-                )
-              ],
-            ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(
+                              Icons.arrow_back_ios,
+                              size: 25,
+                              color: btntext,
+                            ),
+                            Icon(
+                              Icons.more_vert,
+                              size: 21,
+                              color: btntext,
+                            ),
+                          ]),
+                    ),
+                    Positioned(
+                        top: 10.h,
+                        left: 160,
+                        child: CircleAvatar(
+                          radius: 26.sp,
+                        )),
+                  ],
+                ),
+              )
+            ],
           ),
         ));
   }

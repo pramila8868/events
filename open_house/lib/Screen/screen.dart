@@ -9,6 +9,7 @@ import 'package:open_house/widgets/events.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../controller/organization.dart';
+import '../widgets/tabbar.dart';
 
 class Screen extends StatelessWidget {
   // final OrganizationDetail organizationDetail;
@@ -34,115 +35,117 @@ class Screen extends StatelessWidget {
                             state is LoadingOrganizationState) {
                           return CircularProgressIndicator();
                         } else if (state is ResponseOrganizationState) {
-                          final organizationlist = state.organization.length;
+                          final organizationlist = state.organization;
+                          return Text("Hello");
                           // FutureBuilder(
                           //     future: fetchMobileDetails(),
                           //     builder: (context, snapshot) {
                           //       if (snapshot.hasError) print(snapshot.error);
                           //       if (snapshot.hasData) {
                           //         print("snapshot of data is ${snapshot.data}");
-                          return Column(
-                            children: [
-                              Text(
-                                // organizationlist[index]..toString(),
-                                //   organizationlist[].
-                                //  pasteventlist.description.toString(),
-                                //   organizationDetail.name.toString(),
-                                // snapshot.data.
-                                "ABC BeerFeast Open house",
-                                style: TextStyle(
-                                    color: text1,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: "Roboto"),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    //  organizationDetail.image.toString(),
-                                    "images/Vector.png",
-                                    color: text1,
-                                  ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Text(
-                                    // organizationDetail.followersCount
-                                    // .toString(),
-                                    "150  Followers",
-                                    style: TextStyle(
-                                        color: text1,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: "Roboto"),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Button(),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "8",
-                                        style: TextStyle(
-                                            color: text1,
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w600,
-                                            fontFamily: "Roboto"),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 10),
-                                        child: Text(
-                                          "Upcoming Events",
-                                          style: TextStyle(
-                                              color: text1,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400,
-                                              fontFamily: "Roboto"),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        "15",
-                                        style: TextStyle(
-                                            color: text1,
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w600,
-                                            fontFamily: "Roboto"),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 10),
-                                        child: Text(
-                                          "Past Events",
-                                          style: TextStyle(
-                                              color: text1,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400,
-                                              fontFamily: "Roboto"),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          );
+                          // return Column(
+                          //   children: [
+                          //     Text(
+                          //       state.organization.length.toString(),
+                          //       // organizationlist[index]..toString(),
+                          //       //   organizationlist[].
+                          //       //  pasteventlist.description.toString(),
+                          //       //   organizationDetail.name.toString(),
+                          //       // snapshot.data.
+                          //       // "ABC BeerFeast Open house",
+                          //       style: TextStyle(
+                          //           color: text1,
+                          //           fontSize: 24,
+                          //           fontWeight: FontWeight.w700,
+                          //           fontFamily: "Roboto"),
+                          //     ),
+                          //     SizedBox(
+                          //       height: 10,
+                          //     ),
+                          //     Row(
+                          //       mainAxisAlignment: MainAxisAlignment.center,
+                          //       children: [
+                          //         Image.asset(
+                          //           //  organizationDetail.image.toString(),
+                          //           "images/Vector.png",
+                          //           color: text1,
+                          //         ),
+                          //         SizedBox(
+                          //           width: 15,
+                          //         ),
+                          //         Text(
+                          //           // organizationDetail.followersCount
+                          //           // .toString(),
+                          //           "150  Followers",
+                          //           style: TextStyle(
+                          //               color: text1,
+                          //               fontSize: 16,
+                          //               fontWeight: FontWeight.w400,
+                          //               fontFamily: "Roboto"),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //     SizedBox(
+                          //       height: 10,
+                          //     ),
+                          //     Button(),
+                          //     SizedBox(
+                          //       height: 10,
+                          //     ),
+                          //     Row(
+                          //       mainAxisAlignment:
+                          //           MainAxisAlignment.spaceAround,
+                          //       children: [
+                          //         Column(
+                          //           children: [
+                          //             Text(
+                          //               "8",
+                          //               style: TextStyle(
+                          //                   color: text1,
+                          //                   fontSize: 20,
+                          //                   fontWeight: FontWeight.w600,
+                          //                   fontFamily: "Roboto"),
+                          //             ),
+                          //             Padding(
+                          //               padding: const EdgeInsets.only(top: 10),
+                          //               child: Text(
+                          //                 "Upcoming Events",
+                          //                 style: TextStyle(
+                          //                     color: text1,
+                          //                     fontSize: 14,
+                          //                     fontWeight: FontWeight.w400,
+                          //                     fontFamily: "Roboto"),
+                          //               ),
+                          //             ),
+                          //           ],
+                          //         ),
+                          //         Column(
+                          //           children: [
+                          //             Text(
+                          //               "15",
+                          //               style: TextStyle(
+                          //                   color: text1,
+                          //                   fontSize: 20,
+                          //                   fontWeight: FontWeight.w600,
+                          //                   fontFamily: "Roboto"),
+                          //             ),
+                          //             Padding(
+                          //               padding: const EdgeInsets.only(top: 10),
+                          //               child: Text(
+                          //                 "Past Events",
+                          //                 style: TextStyle(
+                          //                     color: text1,
+                          //                     fontSize: 14,
+                          //                     fontWeight: FontWeight.w400,
+                          //                     fontFamily: "Roboto"),
+                          //               ),
+                          //             ),
+                          //           ],
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ],
+                          // );
                         }
                         return CircularProgressIndicator();
                       }),
@@ -151,11 +154,12 @@ class Screen extends StatelessWidget {
                   height: 20,
                 ),
                 Divider(height: 2, thickness: 1, color: Colors.grey),
-                Categories(),
+                //Categories(),
+                TabBarPage(),
                 SizedBox(
                   height: 10,
                 ),
-                Events(),
+                //  Events(),
               ],
             )),
       ],
