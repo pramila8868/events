@@ -2,15 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:open_house/Screen/screen.dart';
+import 'package:open_house/model/organization_detail.dart';
 import 'package:open_house/widgets/custom_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../const/colors.dart';
+import '../controller/organization.dart';
 import '../widgets/categories.dart';
 import '../widgets/events.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  //OrganizationDetail organizationDetail;
+  HomeScreen({
+    super.key, //required this.organizationDetail
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,12 @@ class HomeScreen extends StatelessWidget {
                             top: MediaQuery.of(context).size.height * 0.022.h),
                         decoration: BoxDecoration(color: Colors.black),
                         child: Column(
-                          children: [Screen()],
+                          children: [
+                            Screen(
+
+                                // organizationDetail: organizationDetail
+                                ),
+                          ],
                         ),
                       ),
                       Padding(

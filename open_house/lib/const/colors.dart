@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color bgColor = Color.fromRGBO(18, 3, 3, 2);
+Color bgColor = const Color.fromRGBO(18, 3, 3, 2);
 Color text1 = Color.fromRGBO(255, 255, 255, 1);
 Color btntext = Color.fromRGBO(223, 25, 25, 1);
 Color dividercolor = Color.fromARGB(255, 255, 255, 0);

@@ -1,4 +1,5 @@
- import 'package:bloc/bloc.dart';
+import 'package:bloc/bloc.dart';
+
 class CategoryCubit extends Cubit<int> {
   CategoryCubit() : super(0);
 
@@ -6,3 +7,13 @@ class CategoryCubit extends Cubit<int> {
     emit(index);
   }
 }
+
+// enum TabItem { add, update, delete }
+
+// class TabBarCubit extends Cubit<TabItem> {
+//   TabBarCubit() : super(TabItem.add);
+
+//   void selectTab(TabItem tab) {
+//     emit(tab);
+//   }
+// }
