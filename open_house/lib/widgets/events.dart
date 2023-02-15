@@ -12,7 +12,7 @@ import '../controller/favouritscubit.dart';
 class Events extends StatefulWidget {
   // PastEvent pastevent;
   Events({
-    super.key, //required this.pastevent
+    key, //required this.pastevent
   });
 
   @override
@@ -22,7 +22,7 @@ class Events extends StatefulWidget {
 class _EventsState extends State<Events> {
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
       final cubit = context.read<PastEventCubit>();
       cubit.fetchPastEvent();
     });

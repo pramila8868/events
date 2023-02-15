@@ -3,18 +3,17 @@ import 'package:open_house/Organization_detail/organizarion_state.dart';
 import 'package:open_house/Organization_detail/organization_cubit.dart';
 import 'package:open_house/const/colors.dart';
 import 'package:open_house/model/organization_detail.dart';
-import 'package:open_house/widgets/categories.dart';
 import 'package:open_house/widgets/custom_button.dart';
 import 'package:open_house/widgets/events.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../controller/organization.dart';
-import '../widgets/tabbar.dart';
+import '../tabbar/tabbar.dart';
 
 class Screen extends StatelessWidget {
   // final OrganizationDetail organizationDetail;
   Screen({
-    super.key, //required this.organizationDetail
+    key, //required this.organizationDetail
   });
 
   @override
@@ -154,12 +153,12 @@ class Screen extends StatelessWidget {
                   height: 20,
                 ),
                 Divider(height: 2, thickness: 1, color: Colors.grey),
-                Categories(),
-                //TabBarPage(),
-                SizedBox(
-                  height: 10,
-                ),
-                Events(),
+                //Categories(),
+                TabBarPage(),
+                // SizedBox(
+                //   height: 10,
+                // ),
+                //Events(),
               ],
             )),
       ],

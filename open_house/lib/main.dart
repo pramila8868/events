@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:open_house/Organization_detail/organization_cubit.dart';
 import 'package:open_house/Organization_detail/repository/organization_repository.dart';
-import 'package:open_house/controller/categories_controller.dart';
 import 'package:open_house/past_event_cubit/cubit/pastevent_cubit.dart';
 import 'package:open_house/past_event_cubit/repository/pastevent_repository.dart';
-import 'package:open_house/widgets/tabbar.dart';
+import 'package:open_house/tabbar/tabbar.dart';
+import 'package:open_house/tabbar/tabbar_cubit.dart';
 // ignore: depend_on_referenced_packages
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:open_house/Screen/home_screen.dart';
@@ -20,7 +20,7 @@ void main() {
 class MyApp extends StatelessWidget {
   // OrganizationDetail? detail;
   const MyApp({
-    super.key, //this.detail
+    key, //this.detail
   });
 
   // This widget is the root of your application.
@@ -30,9 +30,6 @@ class MyApp extends StatelessWidget {
     return ResponsiveSizer(builder: (context, Orientation, ScreenType) {
       return MultiBlocProvider(
         providers: [
-          BlocProvider(
-            create: (_) => CategoryCubit(),
-          ),
           // BlocProvider(
           //   create: (_) => OrganizationCubit(),
           // ),
@@ -49,7 +46,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            //  home: TabBarPage(), //MyApp1(),
+            //home: TabBarPage(), //MyApp1(),
             home: HomeScreen()
             // organizationDetail: detail!,
             //organizationDetail: detail.toString();

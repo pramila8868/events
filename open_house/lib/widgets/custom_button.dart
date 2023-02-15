@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:open_house/const/colors.dart';
 
 class Button extends StatelessWidget {
-  const Button({super.key});
+  const Button({key});
 
   @override
   Widget build(BuildContext context) {

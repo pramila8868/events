@@ -8,13 +8,12 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../const/colors.dart';
 import '../controller/organization.dart';
-import '../widgets/categories.dart';
 import '../widgets/events.dart';
 
 class HomeScreen extends StatelessWidget {
   //OrganizationDetail organizationDetail;
   HomeScreen({
-    super.key, //required this.organizationDetail
+    key, //required this.organizationDetail
   });
 
   @override
