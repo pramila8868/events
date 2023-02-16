@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (state is LoadedOrganizationState) {
                     return Positioned(
                         top: 9.6.h,
-                        left: 137,
+                        left: 139,
                         child: CircleAvatar(
                           backgroundImage:
                               NetworkImage(state.organization.image.toString()),

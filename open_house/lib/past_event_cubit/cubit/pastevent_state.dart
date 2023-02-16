@@ -21,3 +21,12 @@ class LoadedPastEventState extends PastEventState {
   final List<PastEvent> pastevent;
   LoadedPastEventState(this.pastevent);
 }
+
+// class PastEventFavouritesState extends PastEventState {
+//   final List<String> favouriteIds;
+
+//    PastEventFavouritesState(this.favouriteIds);
+
+//   @override
+//   List<Object> get props => [favouriteIds];
+// }

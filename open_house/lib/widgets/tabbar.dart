@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_house/const/colors.dart';
 import 'package:open_house/widgets/events.dart';
-
+import 'package:responsive_sizer/responsive_sizer.dart';
 import '../tabbar/tabbar_cubit.dart';
 
 class TabBarPage extends StatefulWidget {
@@ -67,7 +67,7 @@ class _TabBarPageState extends State<TabBarPage>
               padding: const EdgeInsets.only(top: 10),
               child: Container(
                 width: double.infinity,
-                height: 300,
+                height: MediaQuery.of(context).size.height * 0.06.h,
                 // color: Colors.pink,
                 child: TabBarView(
                   controller: _tabController,

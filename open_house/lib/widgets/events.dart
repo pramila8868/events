@@ -71,25 +71,33 @@ class _EventsState extends State<Events> {
                         width: double.infinity,
                         fit: BoxFit.cover,
                       ),
-                      Positioned(
-                        right: 10,
-                        top: 5,
-                        child: CircleAvatar(
-                          radius: 12,
-                          backgroundColor: eventcolor,
-                          child: InkWell(
-                            onTap: () {
-                              context.read<FavoriteCubit>().toggle();
-                              //   userList[index].isInterested.toString();
-                              // favoriteCubit.toggle();
-                            },
-                            child: const Icon(
-                              Icons.favorite,
-                              size: 15,
+                      BlocBuilder<FavoriteCubit, bool>(
+                          builder: (context, isFavorite) {
+                        return Positioned(
+                          right: 10,
+                          top: 5,
+                          child: CircleAvatar(
+                            radius: 12,
+                            backgroundColor: eventcolor,
+                            child: InkWell(
+                              onTap: () {
+                                context.read<FavoriteCubit>().toggle();
+                                // context.read<PastEventCubit>().toggleInterested(
+                              },
+                              child: Icon(
+                                isFavorite
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                                size: 15,
+                                //      isFavorite ? Icons.favorite : Icons.favorite_border,
+                                color: isFavorite ? Colors.red : null,
+                                //Icons.favorite,
+                                //
+                              ),
                             ),
                           ),
-                        ),
-                      )
+                        );
+                      })
                     ]),
                     Padding(
                       padding: const EdgeInsets.all(6.0),
