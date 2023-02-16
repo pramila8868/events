@@ -3,7 +3,7 @@ import 'package:open_house/Organization_detail/organization_cubit.dart';
 import 'package:open_house/Organization_detail/repository/organization_repository.dart';
 import 'package:open_house/past_event_cubit/cubit/pastevent_cubit.dart';
 import 'package:open_house/past_event_cubit/repository/pastevent_repository.dart';
-import 'package:open_house/tabbar/tabbar.dart';
+//import 'package:open_house/tabbar/tabbar.dart';
 import 'package:open_house/tabbar/tabbar_cubit.dart';
 // ignore: depend_on_referenced_packages
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -20,7 +20,8 @@ void main() {
 class MyApp extends StatelessWidget {
   // OrganizationDetail? detail;
   const MyApp({
-    key, //this.detail
+    super.key,
+    //this.detail
   });
 
   // This widget is the root of your application.
@@ -42,18 +43,13 @@ class MyApp extends StatelessWidget {
           //BlocProvider(create: (_) => TabCubit()),
         ],
         child: MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            //home: TabBarPage(), //MyApp1(),
-            home: HomeScreen()
-            // organizationDetail: detail!,
-            //organizationDetail: detail.toString();
-            // )
-            //),
-            //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-            ),
+            //home: TabBarPage(),
+            home: const HomeScreen()),
       );
     });
   }

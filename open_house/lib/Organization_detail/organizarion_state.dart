@@ -1,5 +1,4 @@
 import 'package:open_house/model/organization_detail.dart';
-import 'package:open_house/model/past_model.dart';
 
 abstract class OrganizationState {}
 
@@ -14,7 +13,13 @@ class ErrorOrganizationState extends OrganizationState {
   ErrorOrganizationState(this.message);
 }
 
-class ResponseOrganizationState extends OrganizationState {
-  final List<OrganizationDetail>  organization;
-  ResponseOrganizationState(this.organization);
+
+class ApiNoData extends OrganizationState {}
+
+class ApiNoInternet extends OrganizationState {}
+
+class LoadedOrganizationState extends OrganizationState {
+//  final List<OrganizationDetail> organization;
+  final OrganizationDetail organization;
+  LoadedOrganizationState(this.organization);
 }

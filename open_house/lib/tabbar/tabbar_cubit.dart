@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
 class TabCubit extends Cubit<int> {
   TabCubit() : super(0);

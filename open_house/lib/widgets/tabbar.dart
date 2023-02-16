@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_house/const/colors.dart';
 import 'package:open_house/widgets/events.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
-import 'tabbar_cubit.dart';
-
-// Step 3: Create the cubit
+import '../tabbar/tabbar_cubit.dart';
 
 class TabBarPage extends StatefulWidget {
+  const TabBarPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _TabBarPageState createState() => _TabBarPageState();
 }
 
 class _TabBarPageState extends State<TabBarPage>
     with SingleTickerProviderStateMixin {
-  // Step 6: Create the controller
   late TabController _tabController;
 
-  // Step 7: Initialize the controller and add the tabs
   @override
   void initState() {
     super.initState();
@@ -34,52 +33,56 @@ class _TabBarPageState extends State<TabBarPage>
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TabCubit, int>(
-      // Step 8: Build the tab bar content based on the state
       builder: (context, currentIndex) {
         return Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TabBar(
-              labelStyle:
-                  TextStyle(fontWeight: FontWeight.w700, fontFamily: "Roboto"),
+              labelStyle: const TextStyle(
+                  fontWeight: FontWeight.w700, fontFamily: "Roboto"),
               //  /labelStyle: ,
               labelColor: text1,
               unselectedLabelColor: text1,
+
               // unselectedLabelColor: Colors.red,
-              isScrollable: true,
+              isScrollable: false,
               indicatorSize: TabBarIndicatorSize.tab,
               indicatorColor: btntext,
-              //unselectedLabelStyle: TextStyle(color: Colors.black),
               controller: _tabController,
+              // ignore: prefer_const_literals_to_create_immutables
               tabs: [
-                Tab(
+                const Tab(
                   text: 'Upcoming Events',
                 ),
-                Tab(
+                const Tab(
                   text: 'Past Events',
                 ),
-                // Tab(
-                //   text: 'Past Events',
-                // ),
               ],
               onTap: (index) {
-                // Step 5: Handle the tab bar events and update the state
                 context.read<TabCubit>().changeTab(index);
                 _tabController.animateTo(index);
               },
             ),
-            Container(
-              width: double.infinity,
-              height: 400,
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  Text(
-                    'Upcoming Events',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Events()
-                ],
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Container(
+                width: double.infinity,
+                height: 300,
+                // color: Colors.pink,
+                child: TabBarView(
+                  controller: _tabController,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    // ignore: prefer_const_constructors
+                    Center(
+                      child: const Text(
+                        ' No Events',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    const Events()
+                  ],
+                ),
               ),
             ),
           ],

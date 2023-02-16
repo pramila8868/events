@@ -8,12 +8,16 @@ class InitPastEventState
 class LoadingPastEventState
     extends PastEventState {} // when pasteventstate is loading
 
+class ApiNoData extends PastEventState {}
+
+class ApiNoInternet extends PastEventState {}
+
 class ErrorTPastEventState extends PastEventState {
   final String message;
   ErrorTPastEventState(this.message);
 }
 
-class ResponsePastEventState extends PastEventState {
+class LoadedPastEventState extends PastEventState {
   final List<PastEvent> pastevent;
-  ResponsePastEventState(this.pastevent);
+  LoadedPastEventState(this.pastevent);
 }

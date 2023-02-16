@@ -1,5 +1,6 @@
 import 'package:open_house/past_event_cubit/cubit/pastevent_state.dart';
 import 'package:open_house/past_event_cubit/repository/pastevent_repository.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PastEventCubit extends Cubit<PastEventState> {
@@ -10,7 +11,7 @@ class PastEventCubit extends Cubit<PastEventState> {
     emit(LoadingPastEventState());
     try {
       final response = await _repository.getAll();
-      emit(ResponsePastEventState(response));
+      emit(LoadedPastEventState(response));
     } catch (e) {
       emit(ErrorTPastEventState(e.toString()));
     }

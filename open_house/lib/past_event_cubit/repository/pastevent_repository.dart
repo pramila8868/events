@@ -1,5 +1,6 @@
 //
 import 'dart:convert';
+// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 import 'package:open_house/model/past_model.dart';
 
@@ -13,6 +14,7 @@ class PastEventRepository {
     if (response.statusCode == 200) {
       final json = (jsonDecode(response.body)["results"]
           as List); //as List;.map((e)=>PastEvent.fromMap(e)).toList();
+
       print(json.toString());
       final result = json.map((e) {
         return PastEvent(
@@ -22,7 +24,10 @@ class PastEventRepository {
             name: e["name"],
             venue: e["venue"]);
       }).toList();
+     // print(OrganizationDetail.isInterested);
+      // ignore: avoid_print
       print("result");
+      // ignore: avoid_print
       print(result);
       return result;
     } else {
