@@ -40,10 +40,12 @@ class _EventsState extends State<Events> {
       {
         return const Text("Data is initialize"); // CircularProgressIndicator();
       } else if (state is LoadingPastEventState) {
-        return const CircularProgressIndicator(
-          color: Colors.red,
-          strokeWidth: 10,
-          semanticsValue: "1",
+        return Transform.scale(
+          scale: 0.1,
+          child: const CircularProgressIndicator(
+            color: Colors.white,
+            strokeWidth: 20,
+          ),
         );
       } else if (state is LoadedPastEventState) {
         final pasteventlist = state.pastevent;
